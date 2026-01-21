@@ -103,6 +103,7 @@
             chbTomatoes.TabIndex = 10;
             chbTomatoes.Text = "Tomatoes";
             chbTomatoes.UseVisualStyleBackColor = true;
+            chbTomatoes.CheckedChanged += CbhIngredientCheckedChangedEH;
             // 
             // chbPeppers
             // 
@@ -113,6 +114,7 @@
             chbPeppers.TabIndex = 9;
             chbPeppers.Text = "Peppers";
             chbPeppers.UseVisualStyleBackColor = true;
+            chbPeppers.CheckedChanged += CbhIngredientCheckedChangedEH;
             // 
             // chbSausage
             // 
@@ -123,6 +125,7 @@
             chbSausage.TabIndex = 8;
             chbSausage.Text = "Sausage";
             chbSausage.UseVisualStyleBackColor = true;
+            chbSausage.CheckedChanged += CbhIngredientCheckedChangedEH;
             // 
             // chbPineapple
             // 
@@ -133,7 +136,7 @@
             chbPineapple.TabIndex = 7;
             chbPineapple.Text = "Pineapple";
             chbPineapple.UseVisualStyleBackColor = true;
-            chbPineapple.CheckedChanged += ChbIngredientsCheckedChangedEH;
+            chbPineapple.CheckedChanged += CbhIngredientCheckedChangedEH;
             // 
             // chbMushrooms
             // 
@@ -144,6 +147,7 @@
             chbMushrooms.TabIndex = 6;
             chbMushrooms.Text = "Mushrooms";
             chbMushrooms.UseVisualStyleBackColor = true;
+            chbMushrooms.CheckedChanged += CbhIngredientCheckedChangedEH;
             // 
             // chbOlives
             // 
@@ -154,6 +158,7 @@
             chbOlives.TabIndex = 5;
             chbOlives.Text = "Olives";
             chbOlives.UseVisualStyleBackColor = true;
+            chbOlives.CheckedChanged += CbhIngredientCheckedChangedEH;
             // 
             // chbBacon
             // 
@@ -164,6 +169,7 @@
             chbBacon.TabIndex = 4;
             chbBacon.Text = "Bacon";
             chbBacon.UseVisualStyleBackColor = true;
+            chbBacon.CheckedChanged += CbhIngredientCheckedChangedEH;
             // 
             // chbPepperoni
             // 
@@ -327,6 +333,7 @@
             hsbSauce.Name = "hsbSauce";
             hsbSauce.Size = new Size(263, 20);
             hsbSauce.TabIndex = 9;
+            hsbSauce.ValueChanged += HsbExtraGoodiesValueChangedEH;
             // 
             // hsbCheese
             // 
@@ -347,10 +354,13 @@
             // 
             // dtpDeliveryTime
             // 
+            dtpDeliveryTime.CustomFormat = "MM/dd/yyyy hh:mm";
+            dtpDeliveryTime.Format = DateTimePickerFormat.Custom;
             dtpDeliveryTime.Location = new Point(353, 44);
             dtpDeliveryTime.Name = "dtpDeliveryTime";
-            dtpDeliveryTime.Size = new Size(286, 26);
+            dtpDeliveryTime.Size = new Size(237, 26);
             dtpDeliveryTime.TabIndex = 8;
+            dtpDeliveryTime.ValueChanged += DtpDeliveryTimeValueChangedEH;
             // 
             // label6
             // 
