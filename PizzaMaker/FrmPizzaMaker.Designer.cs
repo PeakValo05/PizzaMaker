@@ -133,6 +133,7 @@
             chbPineapple.TabIndex = 7;
             chbPineapple.Text = "Pineapple";
             chbPineapple.UseVisualStyleBackColor = true;
+            chbPineapple.CheckedChanged += ChbIngredientsCheckedChangedEH;
             // 
             // chbMushrooms
             // 
@@ -173,6 +174,7 @@
             chbPepperoni.TabIndex = 3;
             chbPepperoni.Text = "Pepperoni";
             chbPepperoni.UseVisualStyleBackColor = true;
+            chbPepperoni.CheckedChanged += CbhIngredientCheckedChangedEH;
             // 
             // label2
             // 
@@ -193,6 +195,7 @@
             lsbStrangeAddOns.SelectionMode = SelectionMode.MultiSimple;
             lsbStrangeAddOns.Size = new Size(146, 148);
             lsbStrangeAddOns.TabIndex = 4;
+            lsbStrangeAddOns.SelectedIndexChanged += LsbStrangeAddOnsSelectedIndexChangedEH;
             // 
             // groupBox1
             // 
@@ -219,6 +222,7 @@
             rdoGlutenFree.TabStop = true;
             rdoGlutenFree.Text = "Gluten Free";
             rdoGlutenFree.UseVisualStyleBackColor = true;
+            rdoGlutenFree.CheckedChanged += RdoCrustCheckedChangedEH;
             // 
             // rdoStuffedCrust
             // 
@@ -231,6 +235,7 @@
             rdoStuffedCrust.TabStop = true;
             rdoStuffedCrust.Text = "Stuffed Crust";
             rdoStuffedCrust.UseVisualStyleBackColor = true;
+            rdoStuffedCrust.CheckedChanged += RdoCrustCheckedChangedEH;
             // 
             // rdoDeepDish
             // 
@@ -243,6 +248,7 @@
             rdoDeepDish.TabStop = true;
             rdoDeepDish.Text = "Deep Dish";
             rdoDeepDish.UseVisualStyleBackColor = true;
+            rdoDeepDish.CheckedChanged += RdoCrustCheckedChangedEH;
             // 
             // rdoThinCrust
             // 
@@ -255,6 +261,7 @@
             rdoThinCrust.TabStop = true;
             rdoThinCrust.Text = "Thin Crust";
             rdoThinCrust.UseVisualStyleBackColor = true;
+            rdoThinCrust.CheckedChanged += RdoCrustCheckedChangedEH;
             // 
             // groupBox2
             // 
