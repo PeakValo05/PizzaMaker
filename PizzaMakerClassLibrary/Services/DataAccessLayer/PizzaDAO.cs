@@ -27,7 +27,7 @@ namespace PizzaMakerClassLibrary.Services.DataAccessLayer
         /// </summary>
         /// <param name="newPizza"></param>
         /// <return></return>
-        
+
         public int AddPizzaToOrder(PizzaModels newPizza)
         {
             // Add the new pizza to the pizzaOrder list
@@ -37,3 +37,4 @@ namespace PizzaMakerClassLibrary.Services.DataAccessLayer
         }
     }
 }
+

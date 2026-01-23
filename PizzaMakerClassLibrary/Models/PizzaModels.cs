@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
+using PizzaMaker.Models;
+
 
 /* Jackson Wiser
  * CST-250
@@ -12,7 +15,7 @@ using System.Text;
 
 namespace PizzaMaker.Models
 {
-    internal class PizzaModels
+    public class PizzaModels
     {
         // Class properties
         public string ClientName { get; set; }
