@@ -341,6 +341,7 @@
             hsbCheese.Name = "hsbCheese";
             hsbCheese.Size = new Size(263, 20);
             hsbCheese.TabIndex = 8;
+            hsbCheese.ValueChanged += HsbExtraGoodiesValueChangedEH;
             // 
             // label5
             // 

@@ -27,6 +27,7 @@ namespace PizzaMaker
             btnResetForm.Enabled = false;
 
             UpdatePrice();
+      
 
             hsbSauce.Maximum = 100 + hsbSauce.LargeChange - 1;
             hsbCheese.Maximum = 100 + hsbCheese.LargeChange - 1;
@@ -307,7 +308,6 @@ namespace PizzaMaker
                         // Change the picture box back color to the default
                         pictureBox.BackColor = SystemColors.Control;
                         break;
-
                 }
                 // Check if the control has controls (children)
                 if (control.HasChildren)

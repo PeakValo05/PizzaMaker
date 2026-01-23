@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
+/* Jackson Wiser
+ * CST-250
+ * 01/19/2026
+ * Pizza Maker
+ * Activity 4
+ */
+
+
 namespace PizzaMaker.Models
 {
     internal class PizzaModels
