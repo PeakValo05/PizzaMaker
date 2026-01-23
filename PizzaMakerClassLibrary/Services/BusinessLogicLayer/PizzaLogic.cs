@@ -22,7 +22,7 @@ namespace PizzaMakerClassLibrary.Services.BusinessLogicLayer
             _pizzaDAO = new PizzaDAO();
         }
 
-        public (bool isValidPizza, int pizzasInOrder) AddPizzaOrder(PizzaModels newPizza)
+        public (bool isValidPizza, int pizzasInOrder) AddPizzaToOrder(PizzaModels newPizza)
         {
             // Declare and initialize
             int pizzas = -1;

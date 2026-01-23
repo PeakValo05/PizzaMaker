@@ -6,18 +6,23 @@
  */
 
 using PizzaMaker.Models;
+using PizzaMakerClassLibrary.Services.BusinessLogicLayer;
 
 namespace PizzaMaker
 {
     public partial class FrmPizzaMaker : Form
     {
+        // Class level variables declaration
         private PizzaModels _pizza;
+        private PizzaLogic _pizzaLogic;
 
         /// <summary>
         ///  Default constructor for FrmPizzaMaker
         /// </summary>
         public FrmPizzaMaker()
         {
+
+
             InitializeComponent();
             // Initialize the current order
             _pizza = new PizzaModels();
@@ -25,6 +30,8 @@ namespace PizzaMaker
             btnCreatePizza.Enabled = false;
             // Disbale the reset form button
             btnResetForm.Enabled = false;
+            // Initialize the business logic layer
+            _pizzaLogic = new PizzaLogic();
 
             UpdatePrice();
       
@@ -318,5 +325,32 @@ namespace PizzaMaker
                 } // End of ResetControls
             }
         }
+            /// <summary>
+            /// Click event handler for btnCreatePizza
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            
+            private void BtnCreatePizzaClickEH(object sender, EventArgs e)
+        {
+            // Declare and initialize
+            bool isValidPizza = false;
+            int pizzasInOrder = -1;
+
+            // Use the pizzaLogic to call AddPizzaToOrder
+            (isValidPizza, pizzasInOrder) = _pizzaLogic.AddPizzaToOrder(_pizza);
+
+            // Check if the pizza was valid
+            if (isValidPizza)
+            {
+                ResetForm();
+            }
+
+
+
+
+        }
+
+        }
     }
-}
+
