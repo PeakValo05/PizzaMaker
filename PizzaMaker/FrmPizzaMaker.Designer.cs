@@ -55,7 +55,7 @@
             label5 = new Label();
             dtpDeliveryTime = new DateTimePicker();
             label6 = new Label();
-            pictureBox1 = new PictureBox();
+            picPizzaBoxColor = new PictureBox();
             lblPizzaPrice = new Label();
             label8 = new Label();
             btnResetForm = new Button();
@@ -64,7 +64,7 @@
             grpIngredients.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picPizzaBoxColor).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -372,14 +372,15 @@
             label6.TabIndex = 9;
             label6.Text = "Pizza Box Color";
             // 
-            // pictureBox1
+            // picPizzaBoxColor
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(353, 97);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(237, 96);
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
+            picPizzaBoxColor.BorderStyle = BorderStyle.FixedSingle;
+            picPizzaBoxColor.Location = new Point(353, 97);
+            picPizzaBoxColor.Name = "picPizzaBoxColor";
+            picPizzaBoxColor.Size = new Size(237, 96);
+            picPizzaBoxColor.TabIndex = 10;
+            picPizzaBoxColor.TabStop = false;
+            picPizzaBoxColor.Click += PicPizzaBoxColorClickEH;
             // 
             // lblPizzaPrice
             // 
@@ -410,6 +411,7 @@
             btnResetForm.TabIndex = 13;
             btnResetForm.Text = "Reset Form";
             btnResetForm.UseVisualStyleBackColor = true;
+            btnResetForm.Click += BtnResetFormClickEH;
             // 
             // btnCreatePizza
             // 
@@ -437,7 +439,7 @@
             Controls.Add(btnResetForm);
             Controls.Add(label8);
             Controls.Add(lblPizzaPrice);
-            Controls.Add(pictureBox1);
+            Controls.Add(picPizzaBoxColor);
             Controls.Add(label6);
             Controls.Add(dtpDeliveryTime);
             Controls.Add(label5);
@@ -459,7 +461,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picPizzaBoxColor).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -493,7 +495,7 @@
         private Label label5;
         private DateTimePicker dtpDeliveryTime;
         private Label label6;
-        private PictureBox pictureBox1;
+        private PictureBox picPizzaBoxColor;
         private Label lblPizzaPrice;
         private Label label8;
         private Button btnResetForm;
