@@ -32,10 +32,12 @@ namespace PizzaMaker
             btnResetForm.Enabled = false;
             // Initialize the business logic layer
             _pizzaLogic = new PizzaLogic();
+            // Disable thw see full order button
+            btnSeeFullOrder.Enabled = false;
 
             UpdatePrice();
       
-
+            // Update the maximums for hsbSauce and hsbCheese
             hsbSauce.Maximum = 100 + hsbSauce.LargeChange - 1;
             hsbCheese.Maximum = 100 + hsbCheese.LargeChange - 1;
         }
@@ -344,6 +346,10 @@ namespace PizzaMaker
             if (isValidPizza)
             {
                 ResetForm();
+            }
+            else
+            {
+                MessageBox.Show("Your pizza order is not complete");
             }
 
 

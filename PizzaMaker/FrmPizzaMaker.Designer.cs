@@ -61,6 +61,7 @@
             btnResetForm = new Button();
             btnCreatePizza = new Button();
             txtName = new TextBox();
+            btnSeeFullOrder = new Button();
             grpIngredients.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -431,11 +432,21 @@
             txtName.TabIndex = 1;
             txtName.Leave += TxtNameLeaveEH;
             // 
+            // btnSeeFullOrder
+            // 
+            btnSeeFullOrder.Location = new Point(353, 253);
+            btnSeeFullOrder.Name = "btnSeeFullOrder";
+            btnSeeFullOrder.Size = new Size(123, 23);
+            btnSeeFullOrder.TabIndex = 15;
+            btnSeeFullOrder.Text = "See Full Order";
+            btnSeeFullOrder.UseVisualStyleBackColor = true;
+            // 
             // FrmPizzaMaker
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 540);
+            Controls.Add(btnSeeFullOrder);
             Controls.Add(btnCreatePizza);
             Controls.Add(btnResetForm);
             Controls.Add(label8);
@@ -502,5 +513,6 @@
         private Button btnResetForm;
         private Button btnCreatePizza;
         private TextBox txtName;
+        private Button btnSeeFullOrder;
     }
 }
