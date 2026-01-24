@@ -24,6 +24,8 @@ namespace PizzaMaker
 
 
             InitializeComponent();
+
+            btnResetForm.Click += BtnResetFormClickEH;
             // Initialize the current order
             _pizza = new PizzaModels();
             // Disable the create pizza order
@@ -50,7 +52,7 @@ namespace PizzaMaker
             // Enable the create pizza button
             btnCreatePizza.Enabled = true;
             // Enable the reset form button
-            btnResetForm.Enabled = false;
+            btnResetForm.Enabled = true;
         }
 
         private void FrmPizzaMaker_Load(object sender, EventArgs e)
@@ -335,26 +337,17 @@ namespace PizzaMaker
 
         private void BtnCreatePizzaClickEH(object sender, EventArgs e)
         {
-            // Declare and initialize
-            bool isValidPizza = false;
-            int pizzasInOrder = -1;
+            (bool isValidPizza, int pizzasInOrder) = _pizzaLogic.AddPizzaToOrder(_pizza);
 
-            // Use the pizzaLogic to call AddPizzaToOrder
-            (isValidPizza, pizzasInOrder) = _pizzaLogic.AddPizzaToOrder(_pizza);
-
-            // Check if the pizza was valid
             if (isValidPizza)
             {
                 ResetForm();
+                btnSeeFullOrder.Enabled = true; // Enable after first pizza is added
             }
             else
             {
                 MessageBox.Show("Your pizza order is not complete");
             }
-
-
-
-
         }
         /// <summary>
         /// Click event handler for btnSeeFullOrder

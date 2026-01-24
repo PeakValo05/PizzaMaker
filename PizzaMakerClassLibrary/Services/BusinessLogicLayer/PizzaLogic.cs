@@ -37,5 +37,9 @@ namespace PizzaMakerClassLibrary.Services.BusinessLogicLayer
             // Get and return GetPizzaOrder from the DAO
             return _pizzaDAO.GetPizzaOrder();
         }
+        public bool WriteOrderToFIle()
+        {
+            return _pizzaDAO.WriteOrderToFile();
+        }
     }
 }
