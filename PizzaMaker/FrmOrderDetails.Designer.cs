@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            lblOrderDetails = new Label();
             SuspendLayout();
             // 
-            // label1
+            // lblOrderDetails
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(89, 119);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Order Details";
+            lblOrderDetails.AutoSize = true;
+            lblOrderDetails.Location = new Point(89, 119);
+            lblOrderDetails.Name = "lblOrderDetails";
+            lblOrderDetails.Size = new Size(75, 15);
+            lblOrderDetails.TabIndex = 0;
+            lblOrderDetails.Text = "Order Details";
             // 
             // FrmOrderDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            Controls.Add(lblOrderDetails);
             Name = "FrmOrderDetails";
             Text = "Pizza Order Details";
+            Load += FrmOrderDetails_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label lblOrderDetails;
     }
 }

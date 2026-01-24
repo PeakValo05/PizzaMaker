@@ -36,7 +36,7 @@ namespace PizzaMaker
             btnSeeFullOrder.Enabled = false;
 
             UpdatePrice();
-      
+
             // Update the maximums for hsbSauce and hsbCheese
             hsbSauce.Maximum = 100 + hsbSauce.LargeChange - 1;
             hsbCheese.Maximum = 100 + hsbCheese.LargeChange - 1;
@@ -327,13 +327,13 @@ namespace PizzaMaker
                 } // End of ResetControls
             }
         }
-            /// <summary>
-            /// Click event handler for btnCreatePizza
-            /// </summary>
-            /// <param name="sender"></param>
-            /// <param name="e"></param>
-            
-            private void BtnCreatePizzaClickEH(object sender, EventArgs e)
+        /// <summary>
+        /// Click event handler for btnCreatePizza
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void BtnCreatePizzaClickEH(object sender, EventArgs e)
         {
             // Declare and initialize
             bool isValidPizza = false;
@@ -356,7 +356,26 @@ namespace PizzaMaker
 
 
         }
+        /// <summary>
+        /// Click event handler for btnSeeFullOrder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void BtnSeeFullOrderClickEH(object sender, EventArgs e)
+        {
+            // Declare and initialize 
+            List<PizzaModels> pizzaList;
+            // Get the pizza list from pizzaLogic
+            pizzaList = _pizzaLogic.GetPizzaOrder();
+            // Create a new form with the pizza list
+            FrmOrderDetails frmOrderDetails = new FrmOrderDetails(pizzaList, _pizzaLogic);
+            // Update the label with the pizza order
+            frmOrderDetails.DisplayPizzas();
+            // SHow the form
+            frmOrderDetails.ShowDialog();
 
         }
     }
+}
 
