@@ -15,7 +15,7 @@ namespace PizzaMakerClassLibrary.Services.BusinessLogicLayer
         /// <summary>
         /// Default constructor for PizzaLogic
         /// </summary>
-        
+
         public PizzaLogic()
         {
             // Initialize the pizza DAO object
@@ -24,22 +24,23 @@ namespace PizzaMakerClassLibrary.Services.BusinessLogicLayer
 
         public (bool isValidPizza, int pizzasInOrder) AddPizzaToOrder(PizzaModels newPizza)
         {
-            // Declare and initialize
-            int pizzas = -1;
-            // Call the DAO AddPizzaToOrder
-            pizzas = _pizzaDAO.AddPizzaToOrder(newPizza);
-            // Return the pizzas variable
-            return (true, pizzas);
+            // Validate pizza
+            if (newPizza == null ||
+                string.IsNullOrWhiteSpace(newPizza.ClientName) ||
+                string.IsNullOrWhiteSpace(newPizza.Crust) ||
+                newPizza.Crust == "Unknown" ||
+                newPizza.Ingredients.Count == 0 ||
+                newPizza.CheeseQty <= 0 ||
+                newPizza.SauceQty <= 0)
+            {
+                // Invalid pizza
+                return (false, -1);
+            }
 
-        }
-        public List<PizzaModels> GetPizzaOrder()
-        {
-            // Get and return GetPizzaOrder from the DAO
-            return _pizzaDAO.GetPizzaOrder();
-        }
-        public bool WriteOrderToFIle()
-        {
-            return _pizzaDAO.WriteOrderToFile();
+            // Valid pizza — add to order
+            int pizzas = _pizzaDAO.AddPizzaToOrder(newPizza);
+
+            return (true, pizzas);
         }
     }
 }
